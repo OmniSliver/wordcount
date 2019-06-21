@@ -1,8 +1,8 @@
+/* eslint-disable no-console */
 const {
   getMapByMonth,
-  mapByMonth,
+  monthNameMap,
   readMeta,
-  wordCountMap,
   wordCountMapToArray
 } = require('./util')
 
@@ -29,19 +29,6 @@ function printDataByMonth(mapByMonth) {
     }
     const formattedCount = wordsCount.map(word => word.word + '\t' + word.count).join('\t')
     console.log(monthNameMap[k.split('_')[1]] + '\t' + k.split('_')[0] + '\t' + formattedCount)
-  })
-}
-
-function printData(meta) {
-  meta.forEach(discurso => {
-    try {
-      const wordsCount = wordCountMapToArray(wordCountMap(discurso.filePath))
-      const formattedCount = wordsCount.map(word => word.word + '+' + word.count)
-      console.log(discurso.date + '\t' + discurso.title + '\t' + formattedCount.join(' '))
-    } catch (e) {
-      console.error('error en el discurso=' + JSON.stringify(discurso))
-      console.error(e)
-    }
   })
 }
 
