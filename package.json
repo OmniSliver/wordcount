@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "stopwords-es": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
