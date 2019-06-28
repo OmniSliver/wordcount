@@ -33,7 +33,7 @@ function readMeta(processed_text_dir) {
 
 function wordCountMap(filePath) {
   const text = fs.readFileSync(filePath, 'utf-8')
-  const words = text.split(/[\.,;:`'"()\s\n¿\?¡!]+/)
+  const words = text.split(/[.,;:`'"()\s\n¿?¡!]+/)
 
   const map = {}
 
